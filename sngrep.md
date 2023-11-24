@@ -53,15 +53,15 @@ sngrep - это терминальный инструмент, который г
 
 ### Debian / Ubuntu
 
- **If you're using a recent version of Debian/Ubuntu, you can find sngrep in the official Debian/Ubuntu repositories. (thanks to [@linuxmaniac](https://github.com/linuxmaniac))**
+ **Если вы используете последнюю версию Debian/Ubuntu, вы можете найти sngrep в официальных репозиториях Debian/Ubuntu. (спасибо [@linuxmaniac](https://github.com/linuxmaniac))**
 
-Otheriwse, you can use Irontec repositories for some of Debian and Ubuntu releases. <br/>
+Кроме того, для некоторых выпусков Debian и Ubuntu можно использовать репозитории Irontec. <br/>
 
-Binaries are built only for amd64 and i386 architectures right now with all supported features enabled.
+В настоящее время бинарные файлы собираются только для архитектур amd64 и i386 с включением всех поддерживаемых функций.
 
 ###### Debian
-Add Irontec repositories entry in your _/etc/apt/sources.list_ <br/>
-Use your distrubution source line (**only one of these**)
+Добавьте запись о репозитории Irontec в свой файл _/etc/apt/sources.list_ <br/>
+Используйте соотвественно своему дистрибутиву (**только одна строка из этих**)
 
 <pre>deb http://packages.irontec.com/debian squeeze main
 deb http://packages.irontec.com/debian wheezy main
@@ -71,8 +71,8 @@ deb http://packages.irontec.com/debian buster main
 deb http://packages.irontec.com/debian bullseye main</pre>
 
 ###### Ubuntu
-Add Irontec repositories entry in your _/etc/apt/sources.list_ <br/>
-Use your distrubution source line (**only one of these**)
+Добавьте запись о репозитории Irontec в свой файл _/etc/apt/sources.list_ <br/>
+Используйте соотвественно своему дистрибутиву (**только одна строка из этих**)
 
 <pre>deb http://packages.irontec.com/ubuntu trusty main
 deb http://packages.irontec.com/ubuntu precise main
@@ -82,71 +82,69 @@ deb http://packages.irontec.com/ubuntu bionic main
 deb http://packages.irontec.com/ubuntu focal main
 deb http://packages.irontec.com/ubuntu jammy main</pre>
 
-Install Repository key
+Установите ключ репозитория
 
     wget http://packages.irontec.com/public.key -q -O - | apt-key add -
 
-Install the package
+Установите пакет
 
     apt-get update
     apt-get install sngrep
 
 ### Fedora / CentOS / RHEL Linux
 
-sngrep is available from the [community build server](https://copr.fedorainfracloud.org/coprs/irontec/sngrep/) <br/>
+sngrep доступен в [community build server](https://copr.fedorainfracloud.org/coprs/irontec/sngrep/) <br/>
 
-Enable the repository
+Включите репозиторий
 
     dnf copr enable irontec/sngrep
 
-or 
+или 
 
     yum copr enable irontec/sngrep
 
 
-Install sngrep package
+Установите пакет sngrep
 
     dnf install sngrep
 
-or
+или
 
     yum install sngrep
 
 
 ## Alpine Linux
-sngrep is available in community repositories starting from Alpine v3.3 (Thx Francesco Colista!)
+sngrep доступен в репозитории community начиная с Alpine v3.3 (спс Francesco Colista!)
 
-Decomment community repository from /etc/apk/repositories (if commented)
+Раскомментируйте community репозиторий в /etc/apk/repositories (если закомментирован)
  
-Update your package list
+Обновите список пакетов
 
     apk update
 
-Install sngrep
+Установите sngrep
 
     apk add sngrep
 
 ## Gentoo
-You can find an unofficial ebuilds for sngrep at [Gentoo Bugtracker System](https://bugs.gentoo.org/show_bug.cgi?id=534780) (Thanks to spacedream)
+Вы можете найти неофициальный ebuild для sngrep на [Gentoo Bugtracker System](https://bugs.gentoo.org/show_bug.cgi?id=534780) (спасибо spacedream)
 
-Feel free to vote if you would like to see sngrep be part of Gentoo portage tree.
+Не стесняйтесь голосовать, если хотите, чтобы sngrep стал частью дерева портежей Gentoo.
 
 ## Arch
-You can find an unofficial PKGBUILD for Arch at [ArchLinux User Repositories](https://aur.archlinux.org/packages/sngrep/) (thanks to w1ngnutt)
+Вы можете найти неофициальный PKGBUILD дляr Arch в [ArchLinux User Repositories](https://aur.archlinux.org/packages/sngrep/) (спасибо to w1ngnutt)
 
-Feel free to vote if you would like to see sngrep at official Arch repositories.
+Не стесняйтесь голосовать, если вы хотите, чтобы sngrep стал частью официального репозитория Arch.
 
 ## OSX
-OSX users can install sngrep using [homebrew](https://github.com/Homebrew/homebrew)
+Пользователи OSX могут установить sngrep используя [homebrew](https://github.com/Homebrew/homebrew)
 
     brew install sngrep
 
 ## OpenWRT/LEDE
-You can use official repositories for installing sngrep using:
+Вы можете использовать официальные репозитории для установки sngrep:
 
     opkg install sngrep
-
-
 
 ## Как использовать
 
@@ -182,15 +180,15 @@ You can use official repositories for installing sngrep using:
 
     sngrep -d eth0 -O /tmp/sip_capture.pcap host 192.168.0.50 port 5061
 
-Or displaying all SIP packets for a given host in sip_capture.pcap PCAP file
+Или отображение всех SIP-пакетов для заданного хоста в PCAP-файле sip_capture.pcap
  
     sngrep -I /tmp/sip_capture.pcap host 10.10.1.50 
 
-Linux users may add capture permissions to sngrep to avoid run it as root
+Пользователи Linux могут добавить права захвата для sngrep, чтобы не запускать его от имени root
 
     setcap 'CAP_NET_RAW+eip' /usr/local/bin/sngrep
     
-    if the above does not work, try this:
+    Если вышеописанное не работает, попробуйте сделать следующее:
 
     setcap 'CAP_NET_RAW+eip' /usr/bin/sngrep
  
@@ -198,12 +196,12 @@ Linux users may add capture permissions to sngrep to avoid run it as root
 
 Имеется несколько окон для предоставления различной информации:
 
-* [[Call List Window|CallList]]: Allows to select the calls to be displayed
-* [[Call Flow Window|CallFlow]]: Shows a diagram of source and destiny of messages
-* [[Call Raw Window|CallRaw]]: Display SIP messages texts (useful for copy messages to clipboard)
-* [[Message Diff Window|MessageDiff]]: Displays diferences between two SIP messages
+* [[Call List Window|CallList]]: Позволяет выбрать вызовы для отображения
+* [[Call Flow Window|CallFlow]]: Показывает диаграмму обмена сообщениями источника и назначения
+* [[Call Raw Window|CallRaw]]: Отображение текстов SIP-сообщений (полезно для копирования сообщений в буфер обмена)
+* [[Message Diff Window|MessageDiff]]: Отображение разницы между двумя SIP-сообщениями
 
-[[Here|Screenshots]] are see some screens of sngrep windows.
+[[Here|Screenshots]] видны некоторые экраны окон sngrep.
 
 #### Общие сочетания клавиш
 Most of the program windows have a help dialog with a brief description and useful keybindings. There are some keybindings that can be use anywhere in the program:
