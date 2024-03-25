@@ -49,7 +49,7 @@ sngrep - это терминальный инструмент, который г
 
     brew install sngrep
 
-## Установка двоичных пакетов
+## Установка бинарных пакетов
 
 ### Debian / Ubuntu
 
@@ -99,7 +99,7 @@ sngrep доступен в [community build server](https://copr.fedorainfraclou
 
     dnf copr enable irontec/sngrep
 
-или 
+или
 
     yum copr enable irontec/sngrep
 
@@ -117,7 +117,7 @@ sngrep доступен в [community build server](https://copr.fedorainfraclou
 sngrep доступен в репозитории community начиная с Alpine v3.3 (спс Francesco Colista!)
 
 Раскомментируйте community репозиторий в /etc/apk/repositories (если закомментирован)
- 
+
 Обновите список пакетов
 
     apk update
@@ -181,17 +181,17 @@ sngrep доступен в репозитории community начиная с Al
     sngrep -d eth0 -O /tmp/sip_capture.pcap host 192.168.0.50 port 5061
 
 Или отображение всех SIP-пакетов для заданного хоста в PCAP-файле sip_capture.pcap
- 
-    sngrep -I /tmp/sip_capture.pcap host 10.10.1.50 
+
+    sngrep -I /tmp/sip_capture.pcap host 10.10.1.50
 
 Пользователи Linux могут добавить права захвата для sngrep, чтобы не запускать его от имени root
 
     setcap 'CAP_NET_RAW+eip' /usr/local/bin/sngrep
-    
+
     Если вышеописанное не работает, попробуйте сделать следующее:
 
     setcap 'CAP_NET_RAW+eip' /usr/bin/sngrep
- 
+
 ### Интерфейс
 
 Имеется несколько окон для предоставления различной информации:
@@ -210,7 +210,7 @@ Most of the program windows have a help dialog with a brief description and usef
 *  **F8 or C**: Toggle Message syntax highlight
 
 #### Call List window
-The first window that sngrep shows is Call List window and display the different SIP Call-Ids found in messages. The displayed columns depends on your terminal width and your custom configuration. 
+The first window that sngrep shows is Call List window and display the different SIP Call-Ids found in messages. The displayed columns depends on your terminal width and your custom configuration.
 
 [![call_list](http://irontec.github.io/sngrep/images/call_list.png)](http://irontec.github.io/sngrep/images/call_list.png)
 
@@ -227,7 +227,7 @@ Keybindings:
 * **F6 or r**: Display selected dialog(s) messages in raw text
 * **F7 or f**: Show advanced filters dialogs
 * **F9 or l**: Turn on/off address resolution if enabled
-* **F10 or t**: Select displayed columns 
+* **F10 or t**: Select displayed columns
 * **< or >**: Choose sort direction and which column to use for sorting
 * **Z**: Swap sort direction
 * **p**: Pause
@@ -299,7 +299,7 @@ Inline comments (at the end of a configuration setting) are not supported.
 #### Options
 Options are configured using `set` directive to modify its default value. This are the available options configurable via `set` directive:
 
-Format: `set <option> <value>` 
+Format: `set <option> <value>`
 
 | option | format | default | description |
 | ------------- | ------------- | ------------- |  ------------- |
@@ -341,7 +341,7 @@ Format: `set <option> <value>`
 #### Alias
 Alias can be handy to replace addresses with a label in flow columns. This was designed to improve the understanding of the message source and destination in flows. You can toggle between addresses and alias with _togglealias_ (defaults to `a`, see keybindings below)
 
-Format: `alias <address> <text>` 
+Format: `alias <address> <text>`
 
 Also, addresses with the same alias will be displayed in one column in Call flow _compress_ mode (default `s`, see keybindings below)
 
@@ -390,7 +390,7 @@ All sngrep keybindings can be configured using `bind` and `unbind` directives. E
 `unbind <action> <keycode>`
 
 Keycode can be:
-* A lowercase letter 
+* A lowercase letter
 * An Uppercase letter
 * A letter with `^` or `Ctrl-` preffix
 * One special keycode: `Space`, `Esc`, `Enter`
@@ -454,7 +454,7 @@ Simple call flow coloring messages by CSeq
 Combined view of multiple call flows coloring messages by Request/Response
 [![Call_flow_multiple](http://irontec.github.io/sngrep/images/call_flow_multiple.png)](http://irontec.github.io/sngrep/images/call_flow_multiple.png)
 
-Syntax on SIP messages 
+Syntax on SIP messages
 [![Call_flow_syntax](http://irontec.github.io/sngrep/images/syntax.png)](http://irontec.github.io/sngrep/images/syntax.png)
 
 
@@ -498,7 +498,7 @@ This mini tutorial will allow sngrep to receive kamailio packets and can be used
 ## Установка зависимостей
 ### Debian/Ubuntu
 Install required packages from repository:
-    
+
     # apt-get update
     # apt-get install git autoconf automake gcc make \
       libncursesw5-dev libncurses5-dev libpcap-dev libssl-dev libpcre3-dev
@@ -619,6 +619,4 @@ set eep.listen.port 9061
 If your capagent send CorrelationID enable this option
 `set eep.listen.uuid on`
 
-* Run sngrep and you'll see received packets from kamailio 
-
-
+* Run sngrep and you'll see received packets from kamailio
