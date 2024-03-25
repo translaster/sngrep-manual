@@ -204,35 +204,35 @@ sngrep доступен в репозитории community начиная с Al
 [[Here|Screenshots]] видны некоторые экраны окон sngrep.
 
 #### Общие сочетания клавиш
-Most of the program windows have a help dialog with a brief description and useful keybindings. There are some keybindings that can be use anywhere in the program:
-*  **F1 or h**: Show current window help and keybindings.
-*  **ESC or q**: Go back to the previous window
-*  **F8 or C**: Toggle Message syntax highlight
+В большинстве окон программы есть диалог помощи с кратким описанием и полезными сочетаниями клавиш. Есть несколько сочетаний, которые можно использовать в любом месте программы:
+*  **F1 or h**: Показать справку по текущему окну и сочетание клавиш.
+*  **ESC or q**: Вернуться на предыдущее окно
+*  **F8 or C**: Переключить подсветку синтаксиса сообщений
 
-#### Call List window
-The first window that sngrep shows is Call List window and display the different SIP Call-Ids found in messages. The displayed columns depends on your terminal width and your custom configuration.
+#### Окно списка вызовов
+Первое окно, которое показывает sngrep - это окно Call List (список вызовов), в котором отображаются различные SIP Call-Ids, найденные в сообщениях. Отображаемые столбцы зависят от ширины терминала и пользовательской конфигурации.
 
 [![call_list](http://irontec.github.io/sngrep/images/call_list.png)](http://irontec.github.io/sngrep/images/call_list.png)
 
-You can move between dialogs with _arrow keys_ and selected them using _Spacebar_. Selecting multiple dialogs will display all them in Call flow window and Call Raw window, and will allow to save only the selected message dialogs to a PCAP file.
+Перемещаться между диалогами можно с помощью _стрелок_, а выбирать - с помощью _пробела_. Выбор нескольких диалогов отобразит их все в окне Call flow и Call Raw, а также позволит сохранить в PCAP-файл только выбранные диалоги сообщений.
 
-Keybindings:
+Сочетания клавиш:
 * **Arrow keys**: Move through the list
 * **Enter**: Display current or selected dialog(s) message flow
-* **A**: Auto scroll to new calls
-* **F2 or s**: Save selected/all dialog(s) to a PCAP file
+* **A**: Автопрокрутка до новых вызовов
+* **F2 or s**: Сохранить выбранные/все диалог(и) в PCAP-файл
 * **F3 or / or TAB**: Enter a display filter. This filter will be applied to the text lines in the list
 * **F4 or x**: Display current selected dialog and its related one.
-* **F5**: Clear call list
+* **F5**: Очистить список вызовов
 * **F6 or r**: Display selected dialog(s) messages in raw text
-* **F7 or f**: Show advanced filters dialogs
+* **F7 or f**: Показать расширенные фильтры диалогов
 * **F9 or l**: Turn on/off address resolution if enabled
-* **F10 or t**: Select displayed columns
+* **F10 or t**: Выбор отображаемых столбцов
 * **< or >**: Choose sort direction and which column to use for sorting
 * **Z**: Swap sort direction
-* **p**: Pause
+* **p**: Пауза
 
-You can do a simple matching filter pressing TAB or / . If you need more specific filter options, use the filtering screen:
+Вы можете выполнить простой фильтр соответствия, нажав клавишу TAB или /. Если нужны более конкретные параметры фильтрации, воспользуйтесь экраном фильтрации:
 
 [![filtering](http://irontec.github.io/sngrep/images/filtering.png)](http://irontec.github.io/sngrep/images/filtering.png)
 
@@ -240,8 +240,9 @@ You can also change the displayed columns, setting them on configuration file, o
 
 [![column_select](http://irontec.github.io/sngrep/images/column_select.png)](http://irontec.github.io/sngrep/images/column_select.png)
 
-#### Call Flow window
-This window displays a flow diagram of the selected dialogs' messages.
+#### Окно потока вызовов
+
+В этом окне отображается диаграмма сообщений выбранных диалогов.
 
 ![call_flow](http://irontec.github.io/sngrep/images/call_flow.png)
 
@@ -249,7 +250,7 @@ The selected message payload will be displayed in the right side of the window.
 
 You can move between messages using _arrow keys_ and select them using _Spacebar_. Selecting multiple messages will display the Message Diff Window.
 
-Keybindings:
+Сочетания клавиш:
 * **Arrow keys**: Move through messages
 * **Enter**: Display current message raw (so you can copy payload)
 * **F2 or d**: Toggle SDP info instead of Method/ResponseCode in arrows
@@ -268,40 +269,40 @@ There are several color modes to display the arrows:
 * **By Call-Id**: Each Call-Id one color, useful when displaying multiple calls flows
 * **By CSeq**: Each CSeq one color
 
-#### Call Raw window
-This window will display the selected dialog messages in plain text. It was designed to allow copying the messages payload easily.
+#### Окно вызовов в виде Raw-текста
+В этом окне отображаются выбранные диалоговые сообщения в виде обычного текста. Оно было разработано для того, чтобы можно было легко скопировать полезную информацию сообщения.
 
 ![call_raw](http://irontec.github.io/sngrep/images/call_raw.png)
 (http://irontec.github.io/sngrep/images/call_raw.png)
 
-Keybindings:
-* **Arrow keys**: Move through the window
-* **s**: Save displayed text to file
+Сочетания клавиш:
+* **Клавиши стрелок**: Перемещение по окну
+* **s**: Сохранить отображаемый текст в файл
 
-#### Message diff window
-This window will compare two messages. Right now the comparison is done searching each line in the other message, highlighting those not found exactly.
+#### Окно разницы сообщений
+Это окно позволяет сравнить два сообщения. Сейчас сравнение происходит по каждой строке в другом сообщении, выделяя те, которые точно не найдены.
 
-You can reach this window by selecting two messages using _Spacebar_ in [[Call Flow window|CallFlow]]
+Вы можете попасть в это окно, выделив два сообщения с помощью _пробела_ в [[Окно Call Flow|CallFlow]].
 
 ![msg_diff](http://irontec.github.io/sngrep/images/msg_diff.png)
 
-## Configuration
+## Конфигурация
 
-sngrep configuration is done using sngreprc file. This file contains one line directives that can change default sngrep behaviour. Configuration files are readed in this order
+Конфигурация sngrep выполняется с помощью файла sngreprc. Этот файл содержит однострочные директивы, которые могут изменить поведение sngrep по умолчанию. Конфигурационные файлы считываются в таком порядке
 
-* System-wide configuration: Usually `/etc/sngreprc` or `/usr/local/etc/sngreprc`
-* User configuration: `$HOME/.sngreprc`
+* общесистемная конфигурация: обычно `/etc/sngreprc` или `/usr/local/etc/sngreprc`
+* пользовательская конфигурация: `$HOME/.sngreprc`
 
-#### Comments
-For any of this configuration files, empty lines or lines starting with # will be totally ignored.
-Inline comments (at the end of a configuration setting) are not supported.
+#### Комментарии
+Для любого из этих конфигурационных файлов пустые строки или строки, начинающиеся с `#`, будут полностью проигнорированы.
+Встроенные комментарии (в конце конфигурационного параметра) не поддерживаются.
 
-#### Options
-Options are configured using `set` directive to modify its default value. This are the available options configurable via `set` directive:
+#### Параметры
+Опции настраиваются с помощью директивы `set` для изменения их значения по умолчанию. Здесь перечислены доступные опции, настраиваемые с помощью директивы `set`:
 
-Format: `set <option> <value>`
+Формат: `set <option> <value>`
 
-| option | format | default | description |
+| параметр | формат | по-умолчанию | описание |
 | ------------- | ------------- | ------------- |  ------------- |
 |background| black \| transparent|black| Changes background printing.|
 |syntax| on \| off|on| Enable/Disable SIP Payload syntax highlighting.|
@@ -383,8 +384,8 @@ Here's a list of Call attributes:
 |reason|25|SIP Reason header text|
 |warning|4|SIP Warning header code|
 
-#### Keybindings
-All sngrep keybindings can be configured using `bind` and `unbind` directives. Each screens handles a couple of actions, which can have multiple key binded. You can remove default keybindings and remap the same key to other actions.
+#### Сочетания клавиш
+Все привязки клавиш sngrep могут быть настроены с помощью директив `bind` и `unbind`. Каждый экран обрабатывает несколько действий, к которым может быть привязано несколько клавиш. Вы можете удалить стандартные привязки и переназначить одну и ту же клавишу на другие действия.
 
 `bind <action> <keycode>` <br/>
 `unbind <action> <keycode>`
@@ -451,10 +452,10 @@ Simple call flow coloring messages by CSeq
 [![call_flow](http://irontec.github.io/sngrep/images/call_flow.png)](http://irontec.github.io/sngrep/images/call_flow.png)
 
 
-Combined view of multiple call flows coloring messages by Request/Response
+Объединенное представление нескольких потоков вызовов, раскрашивающих сообщения по запросам/ответам
 [![Call_flow_multiple](http://irontec.github.io/sngrep/images/call_flow_multiple.png)](http://irontec.github.io/sngrep/images/call_flow_multiple.png)
 
-Syntax on SIP messages
+Синтаксис SIP-сообщений
 [![Call_flow_syntax](http://irontec.github.io/sngrep/images/syntax.png)](http://irontec.github.io/sngrep/images/syntax.png)
 
 
@@ -466,8 +467,8 @@ Syntax on SIP messages
 [![msg_diff](http://irontec.github.io/sngrep/images/msg_diff.png)](http://irontec.github.io/sngrep/images/msg_diff.png)
 
 
-### Other dialogs
-#### Settings
+### Прочие диалоги
+#### Настройки
 ![settings](http://irontec.github.io/sngrep/images/settings.png)
 #### Column List selection
 ![column_select](http://irontec.github.io/sngrep/images/column_select.png)
